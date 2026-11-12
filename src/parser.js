@@ -22,7 +22,7 @@ export async function parseOnlineFixUpdates() {
   let games = [];
   if (html) {
     const $ = cheerio.load(html);
-    for (const el of $(".article.clr").toArray().reverse()) {
+    for (const el of $('[class="article clr"]').toArray().reverse()) {
       const content = $(el).find(".article-content");
       const a = content.children("a").first();
       games.push({
