@@ -86,6 +86,7 @@ async function broadcast(client) {
 
 async function pollRecursively(client) {
   try {
+    const reasonRegex = /^(?:(Обновлено([^.]*)[.]))(.*$)/;
     const updatedGames = await parseOnlineFixUpdates();
     const newGames = updatedGames.filter(
       (updatedGame) =>
@@ -94,7 +95,9 @@ async function pollRecursively(client) {
         !lastUpdate.find(
           (game) =>
             game.title === updatedGame.title &&
-            game.reason === updatedGame.reason,
+            (game.reason === updatedGame.reason ||
+              game.reason.match(reasonRegex)[3] ===
+                updatedGame.reason.match(reasonRegex)[3]),
         ),
     );
 
