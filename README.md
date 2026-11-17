@@ -1,4 +1,4 @@
-# Online Fix for Fluxer
+# Online Fix bot for Fluxer
 
 Start by creating an application in your Fluxer account. This bot requires permissions to view channels, send messages and embed links.<br/>
 It will output the oauth2 link for adding the bot to guilds to the console on each startup.
