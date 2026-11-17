@@ -10,8 +10,8 @@ Here's an example of a compose.yaml file:
 ```
 services:
    ofix:
-     image: ghcr.io/vulpeace/ofix-for-fluxer:latest
-     container_name: ofix-for-fluxer
+     image: ghcr.io/vulpeace/online-fix-fluxer:latest
+     container_name: online-fix-fluxer
      restart: unless-stopped
      network_mode: host
      environment:
