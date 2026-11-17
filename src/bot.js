@@ -109,7 +109,7 @@ async function pollRecursively(client) {
   } catch (e) {
     console.error(e.message);
   } finally {
-    setTimeout(pollRecursively, POLL_INTERVAL);
+    setTimeout(() => pollRecursively(client), POLL_INTERVAL);
   }
 }
 
